@@ -21,7 +21,25 @@ const passingGrades = grades.filter(item => item >= 60);
 const numberOfPassingStudents = passingGrades.length;
 console.log(numberOfPassingStudents);
 //6. Посчитайте и выведите количество студентов, получивших отрицательную оценку (балл ниже 60). Используйте аналогичный подход, как в предыдущем шаге.
+const passingMinGrades = grades.filter(item => item < 60);
+const numberOfMinPassingStudents = passingMinGrades.length;
+console.log(numberOfMinPassingStudents);
 //7. Преобразуйте числовые оценки в формат буквенных оценок A/B/C/D/E, используя следующие правила:
+function convertLetter(grade) {
+    if (grade >= 80 && grade <= 100) {
+        return "A"
+    } else if (grade >= 60 && grade <= 79) {
+        return "B"
+    } else if (grade >= 40 && grade <=59) {
+        return "C"
+    } else if (grade >= 20 && grade <= 39) {
+        return "D"
+    } else {
+        return "E";
+    }
+}
+const letterGrades = grades.map(convertLetter);
+console.log(letterGrades);
 //- Если оценка находится в диапазоне от 80 до 100, преобразуйте её в "A"
 //- Если оценка находится в диапазоне от 60 до 79, преобразуйте её в "B"
 //- Если оценка находится в диапазоне от 40 до 59, преобразуйте её в "C"
